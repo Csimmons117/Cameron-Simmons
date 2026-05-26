@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cameron Simmons | IT</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -14,6 +15,8 @@ font-family:'Inter',sans-serif;
 background:#f4f6f8;
 color:#333;
 }
+
+
 
 header{
 position:relative;
@@ -114,13 +117,104 @@ margin-top:0;
 font-size:28px;
 }
 
-.rule-box{
+/* EXPANDABLE CARDS */
+
+.expand-card{
 background:white;
-padding:15px 20px;
-border-radius:6px;
-margin-bottom:10px;
-border-left:4px solid #c62828;
+border-radius:8px;
+margin-bottom:15px;
+overflow:hidden;
 box-shadow:0 2px 6px rgba(0,0,0,0.04);
+}
+
+.expand-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 20px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.expand-header:hover{
+background:#fafafa;
+}
+
+.expand-info{
+display:flex;
+gap:15px;
+align-items:center;
+}
+
+.expand-logo{
+width:55px;
+height:55px;
+border-radius:10px;
+object-fit:cover;
+background:#eee;
+}
+
+.expand-summary h3{
+margin:0;
+font-size:18px;
+}
+
+.expand-summary p{
+margin:4px 0;
+color:#666;
+font-size:14px;
+}
+
+.arrow{
+font-size:24px;
+transition:0.3s;
+}
+
+.expand-content{
+max-height:0;
+overflow:hidden;
+transition:max-height 0.4s ease;
+background:#fafafa;
+border-top:1px solid #eee;
+}
+
+.expand-inner{
+padding:22px;
+}
+
+.tech-stack{
+margin-top:15px;
+margin-bottom:20px;
+}
+
+.tech{
+display:inline-block;
+background:#e3f2fd;
+color:#1565c0;
+padding:6px 10px;
+border-radius:20px;
+font-size:12px;
+margin:5px 5px 0 0;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:12px;
+margin-top:15px;
+}
+
+.gallery img{
+width:100%;
+height:220px;
+object-fit:cover;
+object-position:center;
+border-radius:8px;
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.03);
 }
 
 footer{
@@ -131,20 +225,18 @@ color:#aaa;
 margin-top:40px;
 }
 
+/* MOBILE */
+
 @media (max-width:900px){
 
 .profile-pic{
 width:100px;
 height:100px;
-border-radius:50%;
-border:5px solid white;
-background:url('./pictures/profile.jpg') center/cover;
-  object-fit:cover;
-max-width:100%;
 }
+
 .container{
 flex-direction:column;
-padding:30px;
+padding:25px;
 }
 
 .sidebar{
@@ -156,6 +248,20 @@ left:30px;
 bottom:20px;
 }
 
+.expand-header{
+flex-direction:column;
+align-items:flex-start;
+gap:15px;
+}
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.gallery img{
+height:200px;
+}
+
 }
 
 </style>
@@ -164,29 +270,41 @@ bottom:20px;
 <body>
 
 <header>
+
 <div class="header-content">
 
 <div class="profile-pic"></div>
 
 <div class="header-text">
+
 <p>IT | Cybersecurity | Networking</p>
+
 <h1>Cameron Simmons</h1>
+
 <p>Computer Information Technology Student – CSUN</p>
+
 </div>
 
 </div>
+
 </header>
 
 <nav>
+
 <a href="#">Home</a>
+
 </nav>
 
 <div class="container">
 
+<!-- SIDEBAR -->
+
 <div class="sidebar">
 
 <div class="card">
+
 <h3>Contact</h3>
+
 <p>LinkedIn:<br>
 <a href="https://www.linkedin.com/in/c-simmons-s" target="_blank">
 linkedin.com/in/c-simmons-s
@@ -196,9 +314,11 @@ linkedin.com/in/c-simmons-s
 <a href="https://github.com/Csimmons117" target="_blank">
 github.com/Csimmons117
 </a></p>
+
 </div>
 
 <div class="card">
+
 <h3>Skills</h3>
 
 <span class="badge">AWS</span>
@@ -213,28 +333,64 @@ github.com/Csimmons117
 <span class="badge">Incident Response</span>
 
 </div>
+<!-- ADD THIS INSIDE YOUR SIDEBAR -->
+<!-- PLACE IT UNDER EDUCATION -->
 
 <div class="card">
-<h3>Education</h3>
 
-<p><strong>B.S. Computer Information Technology</strong><br>
-California State University, Northridge<br>
-Aug 2023 – May 2026 (Expected)</p>
+<h3>Roles</h3>
 
-<p><strong>A.A. General Studies: Natural Sciences</strong><br>
-Moorpark College<br>
-Jan 2021 – Jun 2023</p>
+<p>
+<strong>Department of Water and Power</strong><br>
+<span style="color:#666;">
+System Analyst Experience
+</span><br>
+<small>Jul 2025 – Present</small>
+</p>
+
+<hr style="border:none;border-top:1px solid #eee;margin:15px 0;">
+
+<p>
+<strong>CSUN Information Security</strong><br>
+<span style="color:#666;">
+Cybersecurity Operations
+</span><br>
+<small>Aug 2024 – Present</small>
+</p>
+
+<hr style="border:none;border-top:1px solid #eee;margin:15px 0;">
+
+<p>
+<strong>CSUN Telecommunications</strong><br>
+<span style="color:#666;">
+Network Infrastructure
+</span><br>
+<small>Aug 2023 – Aug 2024</small>
+</p>
+
+<hr style="border:none;border-top:1px solid #eee;margin:15px 0;">
+
+<p>
+<strong>Phantom Tech Systems</strong><br>
+<span style="color:#666;">
+Independent IT Consultant
+</span><br>
+<small>Aug 2018 – Aug 2023</small>
+</p>
 
 </div>
 
 <div class="card">
-<h3>Extracurricular</h3>
 
-<p><strong>CSUN Layer 8</strong><br>
-Secretary / Board Member</p>
+<h3>Education</h3>
 
-<p><strong>CSUN MISA</strong><br>
-Director of Technology</p>
+<p><strong>B.S. Computer Information Technology</strong><br>
+California State University, Northridge<br>
+Aug 2023 – May 2026</p>
+
+<p><strong>A.A. General Studies: Natural Sciences</strong><br>
+Moorpark College<br>
+Jan 2021 – Jun 2023</p>
 
 </div>
 
@@ -245,76 +401,580 @@ Director of Technology</p>
 <h2>Overview</h2>
 
 <p>
-Computer Information Technology student at California State University, Northridge with hands-on experience in
-cybersecurity operations, system analysis, networking, and enterprise IT environments. 
-My work focuses on incident response, infrastructure security, and supporting large-scale systems across enterprise networks.
+Computer Information Technology student at California State University, Northridge with hands-on experience in cybersecurity operations, system analysis, networking, and enterprise IT environments.
 </p>
 
-<p>
-I have professional experience working with IT teams to troubleshoot systems, secure endpoints, and deploy infrastructure
-while maintaining documentation and operational standards.
-</p>
+<!-- WORK EXPERIENCE -->
 
 <h2>Work Experience</h2>
 
-<div class="rule-box">
-<strong>Department of Water and Power – Student Professional Worker (System Analyst Experience)</strong><br>
-July 2025 – Present<br>
-• Troubleshoot device issues and assist with system analysis and process improvements.<br>
-• Coordinate device imaging, configuration, and deployment.<br>
-• Work with IT teams and users to ensure system functionality.<br>
-• Document user requirements for system access and hardware replacement.
+<!-- DWP -->
+
+<div class="expand-card">
+
+<div class="expand-header" onclick="toggleSection('job1')">
+
+<div class="expand-info">
+
+<img class="expand-logo"
+src="./pictures/ladwp.png">
+
+<div class="expand-summary">
+
+<h3>Department of Water and Power</h3>
+
+<p>Student Professional Worker</p>
+
+<p>July 2025 – Present</p>
+
 </div>
 
-<div class="rule-box">
-<strong>CSUN Information Security – Student Assistant</strong><br>
-Aug 2024 – Present<br>
-• Use digital forensics and incident response tools to manage threats across campus.<br>
-• Monitor vulnerable systems and maintain endpoint security.<br>
-• Collaborate with universities to mitigate outbreaks and reduce lateral movement.
 </div>
 
-<div class="rule-box">
-<strong>CSUN Telecommunications – Student Assistant</strong><br>
-Aug 2023 – Aug 2024<br>
-• Installed wireless access points across campus.<br>
-• Activated wall ports and tested emergency blue light systems.<br>
-• Worked with networking staff to configure Cisco switches, WAPs, and UPS systems.
+<div class="arrow" id="arrow-job1">⌄</div>
+
 </div>
 
-<div class="rule-box">
-<strong>Phantom Tech Systems – Independent Technology Consultant</strong><br>
-Aug 2018 – Aug 2023<br>
-• Evaluated client technology needs and recommended solutions.<br>
-• Managed device upgrades, replacements, and data transfers.<br>
-• Troubleshot hardware, software, and system performance issues.
+<div class="expand-content" id="job1">
+
+<div class="expand-inner">
+
+<ul>
+
+<li>Troubleshoot enterprise devices and support infrastructure workflows.</li>
+
+<li>Coordinate imaging and deployment operations.</li>
+
+<li>Document hardware replacement procedures.</li>
+
+</ul>
+
+<div class="tech-stack">
+
+<span class="tech">Windows</span>
+<span class="tech">Enterprise Imaging</span>
+<span class="tech">System Analysis</span>
+
 </div>
+
+<div class="gallery">
+
+<img src="./pictures/dwp1.jpg">
+
+<img src="./pictures/dwp2.jpg">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- INFOSEC -->
+
+<div class="expand-card">
+
+<div class="expand-header" onclick="toggleSection('job2')">
+
+<div class="expand-info">
+
+<img class="expand-logo"
+src="./pictures/csunlogo.png">
+
+<div class="expand-summary">
+
+<h3>CSUN Information Security</h3>
+
+<p>Student Assistant</p>
+
+<p>Aug 2024 – Present</p>
+
+</div>
+
+</div>
+
+<div class="arrow" id="arrow-job2">⌄</div>
+
+</div>
+
+<div class="expand-content" id="job2">
+
+<div class="expand-inner">
+
+<ul>
+
+<li>Perform digital forensics and incident response operations.</li>
+
+<li>Monitor endpoint security and vulnerable systems.</li>
+
+<li>Analyze alerts and reduce lateral movement risks.</li>
+
+</ul>
+
+<div class="tech-stack">
+
+<span class="tech">Splunk</span>
+<span class="tech">Qualys</span>
+<span class="tech">Taegis</span>
+
+</div>
+
+<div class="gallery">
+
+<!--<img src="test">
+
+<img src="test">-->
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- TELECOM -->
+
+<div class="expand-card">
+
+<div class="expand-header" onclick="toggleSection('job3')">
+
+<div class="expand-info">
+
+<img class="expand-logo"
+src="./pictures/csunlogo.png">
+
+<div class="expand-summary">
+
+<h3>CSUN Telecommunications</h3>
+
+<p>Student Assistant</p>
+
+<p>Aug 2023 – Aug 2024</p>
+
+</div>
+
+</div>
+
+<div class="arrow" id="arrow-job3">⌄</div>
+
+</div>
+
+<div class="expand-content" id="job3">
+
+<div class="expand-inner">
+
+<ul>
+
+<li>Installed wireless access points across campus.</li>
+
+<li>Configured Cisco switches and networking systems.</li>
+
+<li>Supported infrastructure troubleshooting.</li>
+
+</ul>
+
+<div class="tech-stack">
+
+<span class="tech">Cisco</span>
+<span class="tech">Networking</span>
+<span class="tech">Infrastructure</span>
+
+</div>
+
+<div class="gallery">
+
+<img src="./pictures/tele1.jpg">
+
+<img src="./pictures/tele2.jpg">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PHANTOM -->
+
+<div class="expand-card">
+
+<div class="expand-header" onclick="toggleSection('job4')">
+
+<div class="expand-info">
+
+<img class="expand-logo"
+src="./pictures/Screenshot 2026-05-25 181215.png">
+
+<div class="expand-summary">
+
+<h3>Phantom Tech Systems</h3>
+
+<p>Independent Technology Consultant</p>
+
+<p>Aug 2018 – Aug 2023</p>
+
+</div>
+
+</div>
+
+<div class="arrow" id="arrow-job4">⌄</div>
+
+</div>
+
+<div class="expand-content" id="job4">
+
+<div class="expand-inner">
+
+<ul>
+
+<li>Provided independent IT consulting and technical support services.</li>
+
+<li>Managed device upgrades and troubleshooting.</li>
+
+<li>Built and maintained desktop systems.</li>
+
+</ul>
+
+<div class="tech-stack">
+
+<span class="tech">Windows</span>
+<span class="tech">PC Builds</span>
+<span class="tech">Technical Support</span>
+
+</div>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
+
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PROJECTS -->
 
 <h2>Projects</h2>
 
-<div class="rule-box">
-<strong>Society of Software Engineers Hackathon</strong><br>
-Oct 2025<br>
-• Built and deployed a base website for the hackathon team.<br>
-• Configured a Cloudflare Tunnel for public hosting.<br>
-• Implemented VPN access for secure collaboration.
+
+<!--<div class="expand-card">
+
+<div class="expand-header" onclick="toggleSection('YOUR-ID-HERE')">
+
+<div class="expand-info">
+
+<img class="expand-logo"
+src="./pictures/csunlogo.png">
+
+<div class="expand-summary">
+
+<h3>Senior Design Showcase</h3>
+
+<p>ROLE / POSITION</p>
+
+<p>TIME FRAME</p>
+
 </div>
 
-<div class="rule-box">
-<strong>Information Technology Competition – Digital Forensics</strong><br>
-Apr 2025<br>
-• Built SIEM workflow analyzing a 40-user Windows environment.<br>
-• Parsed Windows event logs using Chainsaw and imported to Splunk.<br>
-• Used Git to track investigation notes and analyze Event IDs.
 </div>
+
+<div class="arrow" id="arrow-YOUR-ID-HERE">⌄</div>
+
+</div>
+
+<div class="expand-content" id="YOUR-ID-HERE">
+
+<div class="expand-inner">
+
+<ul>
+
+<li>First responsibility or achievement.</li>
+
+<li>Second responsibility or achievement.</li>
+
+<li>Third responsibility or achievement.</li>
+
+</ul>
+
+<div class="tech-stack">
+
+<span class="tech">Skill 1</span>
+<span class="tech">Skill 2</span>
+<span class="tech">Skill 3</span>
+
+</div>
+
+<div class="gallery">
+
+<img src="./pictures/image1.jpg">
+
+<img src="./pictures/image2.jpg">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+-->
+<!--end-->
+
+<div class="expand-card">
+
+<div class="expand-header" onclick="toggleSection('project1')">
+
+<div class="expand-info">
+
+<img class="expand-logo"
+src="./pictures/sose.jfif">
+
+<div class="expand-summary">
+
+<h3>Society of Software Engineers Hackathon</h3>
+
+<p>Cloud Infrastructure Project</p>
+
+<p>Oct 2025</p>
+
+</div>
+
+</div>
+
+<div class="arrow" id="arrow-project1">⌄</div>
+
+</div>
+
+<div class="expand-content" id="project1">
+
+<div class="expand-inner">
+
+<ul>
+
+<li>Built and deployed a hackathon website.</li>
+
+<li>Configured Cloudflare Tunnel for hosting.</li>
+
+<li>Implemented VPN access for collaboration.</li>
+
+</ul>
+
+<div class="gallery">
+
+<img src="./pictures/hack1.png" style="object-position:center bottom;">
+
+<img src="./pictures/hack2.jpg">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="expand-card">
+
+<div class="expand-header" onclick="toggleSection('project2')">
+
+<div class="expand-info">
+
+<img class="expand-logo"
+src="./pictures/missa.jfif">
+
+<div class="expand-summary">
+
+<h3>Digital Forensics Competition</h3>
+
+<p>SIEM & Log Analysis</p>
+
+<p>Apr 2025</p>
+
+</div>
+
+</div>
+
+<div class="arrow" id="arrow-project2">⌄</div>
+
+</div>
+
+<div class="expand-content" id="project2">
+
+<div class="expand-inner">
+
+<ul>
+
+<li>Built SIEM workflows for a Windows environment.</li>
+
+<li>Parsed Windows event logs using Chainsaw.</li>
+
+<li>Imported logs into Splunk for analysis.</li>
+
+</ul>
+
+<div class="gallery">
+
+<img src="./pictures/itc1.jpg">
+
+<img src="./pictures/itc2.jpg">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- EXTRACURRICULAR -->
+
+<h2>Extracurricular</h2>
+
+<div class="expand-card">
+
+<div class="expand-header" onclick="toggleSection('extra1')">
+
+<div class="expand-info">
+
+<img class="expand-logo"
+src="./pictures/Layer8Logo.png">
+
+<div class="expand-summary">
+
+<h3>CSUN Layer 8</h3>
+
+<p>Secretary / Board Member</p>
+
+</div>
+
+</div>
+
+<div class="arrow" id="arrow-extra1">⌄</div>
+
+</div>
+
+<div class="expand-content" id="extra1">
+
+<div class="expand-inner">
+
+<ul>
+
+<li>Assist with cybersecurity workshops and club operations.</li>
+
+<li>Coordinate meetings and student engagement events.</li>
+
+<li>Support security awareness initiatives.</li>
+
+</ul>
+
+<div class="gallery">
+
+<img src="./pictures/l8.jpg">
+
+<img src="./pictures/l82.jpg">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="expand-card">
+
+<div class="expand-header" onclick="toggleSection('extra2')">
+
+<div class="expand-info">
+
+<img class="expand-logo"
+src="./pictures/misa.jfif">
+
+<div class="expand-summary">
+
+<h3>CSUN MISA</h3>
+
+<p>Director of Technology</p>
+
+</div>
+
+</div>
+
+<div class="arrow" id="arrow-extra2">⌄</div>
+
+</div>
+
+<div class="expand-content" id="extra2">
+
+<div class="expand-inner">
+
+<ul>
+
+<li>Manage organization technology resources and platforms.</li>
+
+<li>Support club infrastructure and technical operations.</li>
+
+<li>Assist with networking and cybersecurity events.</li>
+
+</ul>
+
+<div class="gallery">
+
+<img src="./pictures/misasite.png">
+
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
 
 </div>
 
 </div>
 
 <footer>
+
 © 2026 Cameron Simmons | All Rights Reserved
+
 </footer>
+
+<script>
+
+function toggleSection(id){
+
+const content=document.getElementById(id);
+const arrow=document.getElementById("arrow-"+id);
+
+if(content.style.maxHeight){
+
+content.style.maxHeight=null;
+arrow.style.transform="rotate(0deg)";
+
+}else{
+
+content.style.maxHeight=content.scrollHeight+"px";
+arrow.style.transform="rotate(180deg)";
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
